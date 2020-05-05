@@ -69,6 +69,28 @@ variable os_password {
   type = string
 }
 
+variable domain {
+  type = string
+  description = "Used for NIC configuration"
+}
+
+variable dns_server_list {
+  type = list
+}
+
+variable ipv4_gateway {
+  type = string
+}
+
+variable ipv4_address {
+  type = string
+}
+
+variable ipv4_netmask {
+  type = number
+  default = 24
+}
+
 # Webiste variables
 
 variable "height" {

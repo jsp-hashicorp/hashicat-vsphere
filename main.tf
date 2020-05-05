@@ -31,6 +31,8 @@ resource vsphere_tag "this" {
   description = var.description
 }
 
+
+
 #https://registry.terraform.io/providers/hashicorp/vsphere/1.17.3/docs/resources/virtual_machine
 resource vsphere_virtual_machine "this" {
   name             = "${var.prefix}-vm"
@@ -60,15 +62,15 @@ resource vsphere_virtual_machine "this" {
     customize {
       linux_options {
           host_name = "${var.prefix}-vm"
-          domain    = "humblelab.com"
+          domain    = var.domain
       }
 
       network_interface {
-          ipv4_address = "10.0.3.20"
-          ipv4_netmask = 24
+          ipv4_address = var.ipv4_address
+          ipv4_netmask = var.ipv4_netmask
         }
-      ipv4_gateway = "10.0.3.1"
-      dns_server_list = ["192.168.1.5"]
+      ipv4_gateway    = var.ipv4_gateway
+      dns_server_list = var.dns_server_list
     }
   }
   /*
@@ -107,9 +109,9 @@ resource "null_resource" "configure-cat-app" {
 
     connection {
       type        = "ssh"
-      user        = "hladmin"
-      password = "Hashi123!"
-      host        = "10.0.3.20"
+      user        = var.os_user
+      password    = var.os_password
+      host        = var.ipv4_address
     }
   }
 
@@ -127,9 +129,9 @@ resource "null_resource" "configure-cat-app" {
 
     connection {
       type        = "ssh"
-      user        = "hladmin"
-      password = "Hashi123!"
-      host        = "10.0.3.20"
+      user        = var.os_user
+      password    = var.os_password
+      host        = var.ipv4_address
     }
   }
 }

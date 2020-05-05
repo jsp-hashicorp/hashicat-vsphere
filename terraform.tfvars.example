@@ -12,6 +12,11 @@ template_name    = "template_ubuntu18"
 
 os_user          = "ubuntu"
 Os_password      = "Hashi123!"
+domain           = "lab.local"
+dns_server_list  = ["192.168.0.10","192.168.0.11"]
+ipv4_gateway     = "192.168.0.1"
+ipv4_address     = "192.168.0.101"
+ipv4_netmask     = 24
 
 nsx_host         = "nsx-manager.lab.local"
 nsx_username     = "admin"
