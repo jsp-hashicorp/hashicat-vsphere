@@ -1,3 +1,4 @@
+/*
 #https://www.terraform.io/docs/providers/nsxt/index.html
 provider nsxt {
   host                 = var.nsx_host
@@ -11,7 +12,7 @@ export NSXT_USERNAME="nsxuser"
 export NSXT_PASSWORD="mysecurepassword"
 export NSXT_MANAGER_HOST="nsx-manager@mydomain.local"
 export NSXT_ALLOW_UNVERIFIED_SSL=true
-*/
+
 
 #https://www.terraform.io/docs/providers/nsxt/r/policy_group.html
 resource nsxt_policy_group "my" {
