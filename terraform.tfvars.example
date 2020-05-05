@@ -1,0 +1,18 @@
+vsphere_user     = "administrator@vsphere.local"
+vsphere_password = "hashi123!"
+vsphere_server   = "vc01.lab.local"
+
+prefix           = "grant"
+subnet           = ["0.0.0.0/0"]
+datacenter_name  = "Sydney"
+cluster_name     = "Development"
+datastore_name   = "ds01"
+vm_network_name  = "ls01"
+template_name    = "template_ubuntu18"
+
+os_user          = "ubuntu"
+Os_password      = "Hashi123!"
+
+nsx_host         = "nsx-manager.lab.local"
+nsx_username     = "admin"
+nsx_password     = "Hashi123!"
